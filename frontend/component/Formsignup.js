@@ -58,20 +58,20 @@ class RegisterForm extends React.Component {
       onSubmit: this.onSubmit,
     }
 
-    /*axios.post("http://localhost:8000/api/register",registered)
-    .then(response =>console.group(response.data))
+    axios.post("http://localhost:4000/api/register", registered)
+      .then(response => console.group(response.data))
 
-    window.location ="/login"*/
+    // window.location ="/login"
 
-    axios
-      .post("http://localhost:4000/api/register", registered)
+    // axios
+    //   .post("http://localhost:4000/api/register", registered)
 
-      .then((res) => {
-        console.log("RESPONSE RECEIVED: ", res);
-      })
-      .catch((error) => {
-        console.log("AXIOS ERROR: ", error);
-      });
+    //   .then((res) => {
+    //     console.log("RESPONSE RECEIVED: ", res);
+    //   })
+    //   .catch((error) => {
+    //     console.log("AXIOS ERROR: ", error);
+    //   });
 
     //  window.location = "/login";
 
