@@ -43,6 +43,8 @@ class LoginForm extends React.Component {
     else {
       alert("Login unsuccesfull!!!");
     }
+
+
     const loggedin = {
 
       email: this.state.fields.email,
@@ -55,13 +57,35 @@ class LoginForm extends React.Component {
 
 
     axios.post("http://localhost:4000/api/login", loggedin)
-      .then(response => console.group(response.data))
+      .then(response => {
+        console.group(response.data)
 
-    //window.location = "/about"
-
-
-
+      })
   }
+
+  // //window.location = "/about"
+
+  //   axios
+  //     .post("http://localhost:4000/api/login", loggedin)
+  //     .then((response) => {
+  //       console.log("RESPONSE RECEIVED: ", response);
+
+  //       if (response.data.status === true) {
+  //         alert("User login successful!!!");
+  //         this.props.history.push("/About");
+  //       } else {
+  //         alert("User doesn't exist!!!");
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.log("AXIOS ERROR: ", error);
+  //       alert("Error!!!");
+  //     });
+  // }
+
+
+
+
 
   validateForm() {
 
@@ -130,7 +154,7 @@ class LoginForm extends React.Component {
                 <div className="errorMsg">{this.state.errors.email}</div>
               </div>
 
-              <div className="form-content-right">
+              <div className="form-inputs">
                 <label>Password</label>
                 <input className="form-input" type="password" name="password" placeholder="Please Enter Your Password" value={this.state.fields.password} onChange={this.handleChange} />
                 <div className="errorMsg">{this.state.errors.password}</div>
@@ -150,3 +174,4 @@ class LoginForm extends React.Component {
 
 
 export default LoginForm;
+
